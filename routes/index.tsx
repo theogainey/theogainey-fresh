@@ -34,10 +34,6 @@ export const handler: Handlers<Posts> = {
         uri: 'xbar-weatheralerts',
       },
     ];
-    // const posts:string[]= [];
-    // for await (const dirEntry of Deno.readDir(`${Deno.cwd()}/content/work`)) {
-    //   posts.push(dirEntry.name.slice(0,-3))
-    // }
     return ctx.render({ posts: posts });
   },
 };
