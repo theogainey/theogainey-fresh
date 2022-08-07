@@ -8,6 +8,7 @@ import NotFound from '../../components/NotFound.jsx';
 
 interface Post {
   content: string;
+  title: string;
 }
 
 export const handler: Handlers<Post> = {
@@ -19,10 +20,12 @@ export const handler: Handlers<Post> = {
       );
       return ctx.render({
         content: content,
+        title: id.replaceAll('-', ' '),
       });
     } catch (_err) {
       return ctx.render({
         content: '',
+        title: 'Not Found',
       });
     }
   },
@@ -35,7 +38,7 @@ export default function Post({ data }: PageProps<Post>) {
   return (
     <Layout>
       <Head>
-        <title>Post Title | Theo Gainey</title>
+        <title>{`${data.title} | Theo Gainey`}</title>
       </Head>
       {html
         ? <div class='cmp-content' dangerouslySetInnerHTML={{ __html: html }} />
