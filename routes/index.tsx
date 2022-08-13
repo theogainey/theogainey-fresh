@@ -27,12 +27,6 @@ export const handler: Handlers<Posts> = {
         preview: 'Check out my part in building an internal planning tool',
         uri: 'sparkbox-availability-planner',
       },
-      {
-        title: 'Xbar Weather Alerts',
-        preview:
-          'I made a weather app for the macOS menu bar and it turned out great',
-        uri: 'xbar-weatheralerts',
-      },
     ];
     return ctx.render({ posts: posts });
   },

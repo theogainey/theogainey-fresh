@@ -26,4 +26,4 @@ Another problem I wanted to solve was that I wanted to improve how xbar  handles
 ## End Result 
 
 
-[![](https://opengraph.githubassets.com/01c7c19e987b269368ae5177000fefcfc96a94b160d41ba2f687dc984b7c7034/theogainey/deno-xbar)](https://github.com/theogainey/deno-xbar)
+[![Link To Deno Xbar module](https://opengraph.githubassets.com/01c7c19e987b269368ae5177000fefcfc96a94b160d41ba2f687dc984b7c7034/theogainey/deno-xbar)](https://github.com/theogainey/deno-xbar)
