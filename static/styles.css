@@ -16,8 +16,8 @@ Table of Contents:
   --highlight-color: #FBF719;
 }
 [data-theme='dark'] {
-  --text-color: #ffffff; 
-  --background-color: #121212;
+  --text-color: #cccccc; 
+  --background-color: #1a1a1a;
   --highlight-color: #018786; 
 }
 /*
@@ -84,7 +84,7 @@ code {
 }
 
 .cmp-header__link {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   padding: 0;
   margin-right: 1rem;
   font-weight: 700;
@@ -110,7 +110,7 @@ code {
 }
 .cmp-home-hero__name {
   font-weight: 700;
-  font-size: 1.875rem; 
+  font-size: 2rem; 
   line-height:  1.2;
   margin-bottom: 0.25rem;
 }
@@ -151,7 +151,7 @@ code {
   border-top: 1px solid gray;
 }
 .cmp-footer__link {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-top: 1rem;
   padding: 0;
   font-weight: 700;
@@ -167,7 +167,7 @@ code {
 
 .cmp-work-preview__section-heading {
   font-weight: 700;
-  font-size: 1.75rem; 
+  font-size: 2rem; 
   line-height:  1.2;
   margin-bottom: 2rem;
 }
@@ -188,29 +188,29 @@ code {
 
 .cmp-work-preview__title {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   text-transform: capitalize;
   margin-bottom: 0;
 }
 
 .cmp-work-preview__preview {
   font-weight: 400;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   margin-top: 0;
 }
 
 
 .cmp-content h1{
-  font-size: 2rem;
+  font-size: 2.25rem;
 }
 .cmp-content h2{
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .cmp-content p,
 .cmp-content ul {
-  font-size: 1.125rem;
-  line-height: 1.45;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 .cmp-image-container{
   width: 90%;
@@ -228,13 +228,13 @@ code {
   flex-direction: column;
 }
 .cmp-not-found h1 {
-  font-size: 2;
+  font-size: 2.25rem;
   font-weight: 700;
   font-size: 1.875rem; 
 }
 .cmp-not-found p {
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 /*
