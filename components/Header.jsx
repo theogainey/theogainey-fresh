@@ -9,7 +9,7 @@ export default function Header() {
         <a href='/work' class='cmp-header__link hover-highlight'>Work</a>
       </div>
       <div>
-        <button id='light-mode-toggle'>
+        <button id='light-mode-toggle' aria-label='light-mode-toggle'>
           <svg
             viewBox='0 0 24 24'
             width='24'
