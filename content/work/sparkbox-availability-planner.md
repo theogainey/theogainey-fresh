@@ -14,6 +14,6 @@ This first technical choice for this app was to use NextJS as a framework. NextJ
 The next technical choice was to use SCSS for styling. It was also decided to use [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) alongside [BEM class naming conventions](https://sparkbox.com/foundry/bem_by_example) to organize our styles.   
 
 ## How To Check It Out 
-
+Unfortunately the final version of this project is not public. But a demo version with fake data is public. To view this demo [click here](https://fellowship-availability.netlify.app/). Additionally you can check out the code for the demo version by clicking the card below.
 
 [![](https://opengraph.githubassets.com/a613bdc6a8113bfd57bf048d586d47d2ebee032d8923cc2969933a23dda6ca34/sparkbox/team-availability)](https://github.com/sparkbox/team-availability)
