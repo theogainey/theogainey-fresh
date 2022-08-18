@@ -24,7 +24,7 @@ export default function HomeHero() {
           alt=''
           height='150'
           width='150'
-          src='/theo-gainey.png'
+          src='/theo-gainey.webp'
           class='cmp-home-hero__image'
         />
       </div>
