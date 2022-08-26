@@ -4,7 +4,7 @@ import NotFound from '../components/NotFound.jsx';
 
 export default function NotFoundPage({ url }: UnknownPageProps) {
   return (
-    <Layout home={true}>
+    <Layout home={false}>
       <NotFound />
     </Layout>
   );

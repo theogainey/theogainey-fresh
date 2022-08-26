@@ -1,3 +1,11 @@
+---
+{
+  "title": "Deno Xbar",
+  "preview": "How I made it easy to write xbar plugins in TypeScript",
+  "uri": "deno-xbar"
+}
+---
+
 # Deno Xbar
 
 One of the things I love most about being a developer is that I have the ability to build the tools I wished existed. Recently, I was building an app for xbar using TypeScript. While doing so I ran into a few problems that I knew I could prevent in the future if I had the right tools. After discovering that the tools I wanted did not exist, I decided to build the tools myself.
@@ -25,5 +33,9 @@ Another problem I wanted to solve was that I wanted to improve how xbar  handles
 
 ## End Result 
 
-
-[![Link To Deno Xbar module](https://opengraph.githubassets.com/01c7c19e987b269368ae5177000fefcfc96a94b160d41ba2f687dc984b7c7034/theogainey/deno-xbar)](https://github.com/theogainey/deno-xbar)
+{% imgWrapper %} 
+{% imgLink href="https://github.com/theogainey/deno-xbar!"%}
+{% imgRoot alt="Link To Deno Xbar module" src="https://opengraph.githubassets.com/01c7c19e987b269368ae5177000fefcfc96a94b160d41ba2f687dc984b7c7034/theogainey/deno-xbar"%}
+{% /imgRoot%}
+{% /imgLink%}
+{% /imgWrapper %} 

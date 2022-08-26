@@ -1,3 +1,10 @@
+---
+{
+  "title": "Sparkbox Availability Planner",
+  "preview": "Check out my part in building an internal planning tool",
+  "uri": "sparkbox-availability-planner"
+}
+---
 # Sparkbox Team Availability Planner
 
 For about 10 weeks I was a developer on a small team that built an internal company tool. The goal of this tool was to help the company's project managers make decisions when scheduling team members for future work. 
@@ -16,4 +23,9 @@ The next technical choice was to use SCSS for styling. It was also decided to us
 ## How To Check It Out 
 Unfortunately the final version of this project is not public. But a demo version with fake data is public. To view this demo [click here](https://fellowship-availability.netlify.app/). Additionally you can check out the code for the demo version by clicking the card below.
 
-[![](https://opengraph.githubassets.com/a613bdc6a8113bfd57bf048d586d47d2ebee032d8923cc2969933a23dda6ca34/sparkbox/team-availability)](https://github.com/sparkbox/team-availability)
+{% imgWrapper %} 
+{% imgLink href="https://github.com/sparkbox/team-availability"%}
+{% imgRoot alt="" src="https://opengraph.githubassets.com/a613bdc6a8113bfd57bf048d586d47d2ebee032d8923cc2969933a23dda6ca34/sparkbox/team-availability"%}
+{% /imgRoot%}
+{% /imgLink%}
+{% /imgWrapper %} 
