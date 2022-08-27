@@ -38,50 +38,32 @@ export default function App(props: AppProps) {
           dangerouslySetInnerHTML={{
             __html: `
             const toggleLightMode = () => {
-              const url = new URL(document.URL);
-              if(url.hash === '#theme-dark') {
-                url.hash = '#';
+              const theme = localStorage.getItem("theme");
+              if(theme === 'dark') {
                 document.documentElement.setAttribute('data-theme','light');
-                const links = document.getElementsByTagName('a');
-                for (let i = 0; i < links.length; i++) {
-                  const href = links[i].getAttribute('href');
-                  links[i].setAttribute('href', href?.slice(0, -11));
-                }
+                localStorage.setItem("theme", "light");
               }
               else {
-                url.hash = '#theme-dark';
                 document.documentElement.setAttribute('data-theme','dark');
-                const links = document.getElementsByTagName('a');
-                for (let i = 0; i < links.length; i++) {
-                  const href = links[i].getAttribute('href');
-                  links[i].setAttribute('href',  href + '#theme-dark')
-                }
+                localStorage.setItem("theme", "dark");
               }
-              document.location.href = url.href;
             } 
             window.onload = () => {   
-              let isSelfReferrer = false;
-              if(document.referrer){
-                const referrerOrigin = new URL(document.referrer).origin;
-                const self = new URL(document.documentURI).origin;
-                isSelfReferrer = referrerOrigin === self;
-              }
               const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              const defaultHash = window.location?.hash;
-              if(defaultHash==='#theme-dark' || (!isSelfReferrer && prefersDark)){
-                const url = new URL(document.URL);
-                url.hash = '#theme-dark';
-                document.location.href = url.href;
-                document.documentElement.setAttribute('data-theme','dark');
-                const links = document.getElementsByTagName('a');
-                for (let i = 0; i < links.length; i++) {
-                  const href = links[i].getAttribute('href');
-                  links[i].setAttribute('href', href + '#theme-dark')
-                }
+              const theme = localStorage.getItem("theme");
+              if(theme){
+                document.documentElement.setAttribute('data-theme',theme);
+              }
+              else if(prefersDark){
+                document.documentElement.setAttribute('data-theme','dark')
+                localStorage.setItem("theme", "dark");
+              }
+              else {
+                document.documentElement.setAttribute('data-theme','light')
+                localStorage.setItem("theme", "light");
               }
               document.getElementById('light-mode-toggle').addEventListener('click', () =>toggleLightMode());
-            }
-        `,
+            }        `,
           }}
         />
       </Head>

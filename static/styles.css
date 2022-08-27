@@ -5,7 +5,6 @@ Table of Contents:
   3. Objects
   4. Components
   5. Utilities
-
 =====================================================================
 1. Settings
   Color definitions and other variables 
@@ -32,7 +31,6 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
 }
-
 a {
   text-decoration: none;
   color: inherit;
@@ -43,7 +41,6 @@ ul {
   text-indent: 0;
   list-style: inside;
 }
-
 button {
   margin: 0;
   padding: 0;
@@ -51,7 +48,6 @@ button {
   background: none;
   color: inherit;
 }
-
 code {
   padding: 0.25rem;
 }
@@ -67,14 +63,11 @@ code {
   width: calc(100% - 4rem);
   max-width: 75ch; 
 }
-
-
 /*
 =====================================================================
 4. Components 
   Specific UI components. 
 */
-
 .cmp-header {
   margin-bottom: 3rem;
   width: 100%;
@@ -82,14 +75,12 @@ code {
   justify-content: space-between;
   align-items: flex-start;
 }
-
 .cmp-header__link {
   font-size: 1.5rem;
   padding: 0;
   margin-right: 1rem;
   font-weight: 700;
 }
-
 .cmp-light-mode-toggle{
   line-height: 1.15;
   padding: 0.25rem;
@@ -124,7 +115,6 @@ code {
 .cmp-home-hero__detail {
   margin-bottom: 4rem;
 }
-
 .cmp-home-hero__image {
   border-radius: 100%;
   background-color: #aaaaaa;
@@ -144,10 +134,9 @@ code {
     margin-left: auto;
   }
 }
-
 .cmp-footer {
-  margin: 3rem 0; 
-  padding-top: 1rem;
+  margin: 4rem 0; 
+  padding: 1rem 0;
   border-top: 1px solid gray;
 }
 .cmp-footer__link {
@@ -160,19 +149,15 @@ code {
   margin-left: 1rem;
   margin-right: 1rem;
 }
-
 .cmp-work-preview {
   list-style: none;
 }
-
 .cmp-work-preview__section-heading {
   font-weight: 700;
   font-size: 2rem; 
   line-height:  1.2;
   margin-bottom: 2rem;
 }
-
-
 .cmp-work-preview__card .cmp-work-preview__title {
   display: inline-block;
   background-image: linear-gradient(var(--highlight-color),var(--highlight-color));
@@ -180,39 +165,31 @@ code {
   background-repeat: no-repeat;
   transition: background-size 400ms;
 }
-
 .cmp-work-preview__card:hover .cmp-work-preview__title {
   background-size: 100% 100%;
 }
-
-
 .cmp-work-preview__title {
   font-weight: 700;
   font-size: 1.5rem;
   text-transform: capitalize;
   margin-bottom: 0;
 }
-
 .cmp-work-preview__preview {
   font-weight: 400;
   font-size: 1.25rem;
   margin-top: 0;
 }
-
-
 .cmp-content h1{
   font-size: 2.25rem;
 }
 .cmp-content h2{
   font-size: 2rem;
 }
-
 .cmp-content p,
 .cmp-content ul {
   font-size: 1.25rem;
   line-height: 1.5;
 }
-
 .cmp-content p a {
   text-decoration: underline;
   background-image: linear-gradient(var(--highlight-color),var(--highlight-color));
@@ -220,12 +197,9 @@ code {
   background-repeat: no-repeat;
   transition: background-size 400ms;
 }
-
 .cmp-content p a:hover {
   background-size: 100% 100%;
 }
-
-
 .cmp-image-container{
   width: 90%;
   margin: 0 auto;
@@ -236,7 +210,6 @@ code {
     0 8px 10px -6px rgb(0 0 0 / 0.1); 
   border-radius: 1rem;
 } 
-
 .cmp-not-found{
   display: flex;
   flex-direction: column;
@@ -250,27 +223,23 @@ code {
   font-weight: 400;
   font-size: 1.75rem;
 }
-
 /*
 =====================================================================
 5. Utilities
   Utilities and helper classes with ability to override anything
   which goes before in the triangle, eg. hide helper class
 */
-
 .hover-highlight {
   background-image: linear-gradient(var(--highlight-color),var(--highlight-color));
   background-size: 0 100%;
   background-repeat: no-repeat;
   transition: background-size 400ms;
 }
-
 @media (hover: hover) {
   .hover-highlight:hover {
     background-size: 100% 100%;
   }
 }
-
 .hover-highlight:focus {
   background-size: 100% 100%;
 }
