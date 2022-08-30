@@ -66,6 +66,19 @@ export default function App(props: AppProps) {
             }        `,
           }}
         />
+        <script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=G-VERG9WQXHD'
+        >
+        </script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: ` window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VERG9WQXHD');`,
+          }}
+        />
       </Head>
       <props.Component />
     </>
