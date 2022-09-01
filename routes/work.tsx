@@ -4,6 +4,7 @@ import { Head } from '$fresh/runtime.ts';
 import { Handlers, PageProps } from '$fresh/server.ts';
 import Layout from '../components/Layout.jsx';
 import WorkPreview from '../components/WorkPreview.jsx';
+import SEO from '../components/SEO.tsx';
 
 type Post = {
   title: string;
@@ -36,8 +37,9 @@ export const handler: Handlers<Posts> = {
 export default function Work({ data }: PageProps<Posts>) {
   return (
     <Layout>
+      <SEO uri={''} title={'Theo Gainey - Work'} />
       <Head>
-        <title>Theo Gainey</title>
+        <title>Theo Gainey - Work</title>
       </Head>
       {data.posts && <WorkPreview posts={data.posts} />}
     </Layout>

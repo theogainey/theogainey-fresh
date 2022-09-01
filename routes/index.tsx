@@ -1,10 +1,11 @@
 /** @jsx h */
 import { h } from 'preact';
-import { Head } from '$fresh/runtime.ts';
 import { Handlers, PageProps } from '$fresh/server.ts';
+import { Head } from '$fresh/runtime.ts';
 import Layout from '../components/Layout.jsx';
 import HomeHero from '../components/HomeHero.jsx';
 import WorkPreview from '../components/WorkPreview.jsx';
+import SEO from '../components/SEO.tsx';
 
 type Post = {
   title: string;
@@ -35,6 +36,7 @@ export const handler: Handlers<Posts> = {
 export default function Home({ data }: PageProps<Posts>) {
   return (
     <Layout>
+      <SEO home uri={''} title={'Theo Gainey - Full Stack Developer'} />
       <Head>
         <title>Theo Gainey - Full Stack Developer</title>
       </Head>
