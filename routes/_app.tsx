@@ -35,38 +35,6 @@ export default function App(props: AppProps) {
           type='image/png'
         />
         <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            const toggleLightMode = () => {
-              const theme = localStorage.getItem("theme");
-              if(theme === 'dark') {
-                document.documentElement.setAttribute('data-theme','light');
-                localStorage.setItem("theme", "light");
-              }
-              else {
-                document.documentElement.setAttribute('data-theme','dark');
-                localStorage.setItem("theme", "dark");
-              }
-            } 
-            window.onload = () => {   
-              const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              const theme = localStorage.getItem("theme");
-              if(theme){
-                document.documentElement.setAttribute('data-theme',theme);
-              }
-              else if(prefersDark){
-                document.documentElement.setAttribute('data-theme','dark')
-                localStorage.setItem("theme", "dark");
-              }
-              else {
-                document.documentElement.setAttribute('data-theme','light')
-                localStorage.setItem("theme", "light");
-              }
-              document.getElementById('light-mode-toggle').addEventListener('click', () =>toggleLightMode());
-            }        `,
-          }}
-        />
-        <script
           async
           src='https://www.googletagmanager.com/gtag/js?id=G-VERG9WQXHD'
         >
