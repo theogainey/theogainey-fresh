@@ -2,10 +2,10 @@
 import { h } from 'preact';
 import { Handlers, PageProps } from '$fresh/server.ts';
 import { Head } from '$fresh/runtime.ts';
-import Layout from '../../components/Layout.jsx';
-import marked from '../../marked.ts';
-import NotFound from '../../components/NotFound.jsx';
-import SEO from '../../components/SEO.tsx';
+import Layout from '../components/Layout.jsx';
+import marked from '../marked.ts';
+import NotFound from '../components/NotFound.jsx';
+import SEO from '../components/SEO.tsx';
 
 interface Post {
   content: string;
