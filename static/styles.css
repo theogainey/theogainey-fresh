@@ -10,14 +10,10 @@ Table of Contents:
   Color definitions and other variables 
 */
 :root {
-  --text-color: #1B1B1D;
-  --background-color: #f6f8f9;
-  --highlight-color: #FBF719;
-}
-[data-theme='dark'] {
-  --text-color: #cccccc; 
-  --background-color: #1a1a1a;
-  --highlight-color: #018786; 
+  --text-color: #cccccc;
+  --background-color: hsla(240, 2%, 10%, 1);
+  --gradient-primary: hsla(279, 80%, 67%, 0.1);
+  --gradient-accent: hsla(194, 29%, 31%, 0.3);
 }
 /*
 =====================================================================
@@ -28,6 +24,19 @@ Table of Contents:
 body {
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
+  background-image:
+  radial-gradient(
+    ellipse 40% 70% at 115% 45%,
+    var(--gradient-accent) 9%,
+    var(--gradient-primary) 48%,
+    transparent 90%
+  ),
+  radial-gradient(
+    ellipse 35% 50% at -15% 10%,
+    var(--gradient-accent) 9%,
+    var(--gradient-primary) 52%,
+    transparent 90%
+  );
   color: var(--text-color);
   background-color: var(--background-color);
 }
@@ -81,14 +90,6 @@ code {
   margin-right: 1rem;
   font-weight: 700;
 }
-.cmp-light-mode-toggle{
-  line-height: 1.15;
-  padding: 0.25rem;
-}
-.cmp-light-mode-toggle:hover{
-  background-color: var(--highlight-color);
-  border-radius: 100%;
-}
 .cmp-home-hero {
   display: flex;
   flex-direction: column-reverse;
@@ -137,7 +138,6 @@ code {
 .cmp-footer {
   margin: 4rem 0; 
   padding: 1rem 0;
-  border-top: 1px solid gray;
 }
 .cmp-footer__link {
   font-size: 1.5rem;
@@ -158,26 +158,28 @@ code {
   line-height:  1.2;
   margin-bottom: 2rem;
 }
-.cmp-work-preview__card .cmp-work-preview__title {
-  display: inline-block;
-  background-image: linear-gradient(var(--highlight-color),var(--highlight-color));
-  background-size: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size 400ms;
+.cmp-work-preview__card{
+  padding: 2rem;
+  display: block;
+  background-color: hsla(0,0%,100%,.05);
+  border-radius: 1rem;
+  margin: 0;
+  margin-top: 2.5rem;
 }
-.cmp-work-preview__card:hover .cmp-work-preview__title {
-  background-size: 100% 100%;
+.cmp-work-preview__card:hover, 
+.cmp-work-preview__card:focus {
+  background-color: hsla(0,0%,100%,.1);
 }
 .cmp-work-preview__title {
   font-weight: 700;
   font-size: 1.5rem;
   text-transform: capitalize;
-  margin-bottom: 0;
+  margin: 0;
 }
 .cmp-work-preview__preview {
   font-weight: 400;
   font-size: 1.25rem;
-  margin-top: 0;
+  margin: 0;
 }
 .cmp-content h1{
   font-size: 2.25rem;
@@ -190,24 +192,12 @@ code {
   font-size: 1.25rem;
   line-height: 1.5;
 }
-.cmp-content p a {
-  text-decoration: underline;
-  background-image: linear-gradient(var(--highlight-color),var(--highlight-color));
-  background-size: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size 400ms;
-}
 .cmp-content p a:hover {
-  background-size: 100% 100%;
-}
-.cmp-image-container{
-  width: 90%;
-  margin: 0 auto;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
 }
 .cmp-image{
   width: 100%;
-   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 8px 10px -6px rgb(0 0 0 / 0.1); 
   border-radius: 1rem;
 } 
 .cmp-not-found{
@@ -229,17 +219,13 @@ code {
   Utilities and helper classes with ability to override anything
   which goes before in the triangle, eg. hide helper class
 */
-.hover-highlight {
-  background-image: linear-gradient(var(--highlight-color),var(--highlight-color));
-  background-size: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size 400ms;
-}
 @media (hover: hover) {
   .hover-highlight:hover {
-    background-size: 100% 100%;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
   }
 }
 .hover-highlight:focus {
-  background-size: 100% 100%;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
 }
