@@ -1,14 +1,6 @@
-/** @jsx h */
-import { h } from 'preact';
 import { Head } from '$fresh/runtime.ts';
 
-type SEOProps = {
-  uri: string;
-  title: string;
-  home?: boolean;
-};
-
-export default function SEO({ uri, title, home }: SEOProps) {
+export default function SEO({ uri, title, home }) {
   return (
     <Head>
       <link

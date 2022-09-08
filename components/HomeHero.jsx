@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from 'preact';
-
 export default function HomeHero() {
   return (
     <div class='cmp-home-hero'>

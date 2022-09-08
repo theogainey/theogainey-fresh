@@ -1,11 +1,9 @@
-/** @jsx h */
-import { h } from 'preact';
 import { Handlers, PageProps } from '$fresh/server.ts';
 import { Head } from '$fresh/runtime.ts';
 import Layout from '../components/Layout.jsx';
 import marked from '../marked.ts';
 import NotFound from '../components/NotFound.jsx';
-import SEO from '../components/SEO.tsx';
+import SEO from '../components/SEO.jsx';
 
 interface Post {
   content: string;
@@ -37,8 +35,8 @@ export default function Post({ data }: PageProps<Post>) {
 
   const html = data.content ? marked.parse(data.content) : '';
   return (
-    <Layout>
-      <SEO uri={''} title={data.title} />
+    <Layout home={false}>
+      <SEO uri={''} title={data.title} home={false} />
       <Head>
         <title>{`${data.title} | Theo Gainey`}</title>
       </Head>

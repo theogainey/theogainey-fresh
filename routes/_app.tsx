@@ -1,6 +1,3 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
-import { Fragment, h } from 'preact';
 import { asset, Head } from '$fresh/runtime.ts';
 import { AppProps } from '$fresh/server.ts';
 
@@ -34,7 +31,8 @@ export default function App(props: AppProps) {
           sizes='16x16'
           type='image/png'
         />
-        <script
+        {
+          /* <script
           async
           src='https://www.googletagmanager.com/gtag/js?id=G-VERG9WQXHD'
         >
@@ -46,7 +44,8 @@ export default function App(props: AppProps) {
             gtag('js', new Date());
             gtag('config', 'G-VERG9WQXHD');`,
           }}
-        />
+        />*/
+        }
       </Head>
       <props.Component />
     </>

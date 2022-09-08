@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from 'preact';
-
 export default function WorkPreview({ posts }) {
   return (
     <section>
@@ -11,6 +8,9 @@ export default function WorkPreview({ posts }) {
             <a class='cmp-work-preview__card' href={`/${post.uri}`}>
               <h3 class='cmp-work-preview__title'>{post.title}</h3>
               <p class='cmp-work-preview__preview'>{post.preview}</p>
+              <time class='cmp-work-preview__date' dateTime={post.dateTime}>
+                {post.date}
+              </time>
             </a>
           </li>
         ))}

@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from 'preact';
-
 export default function NotFound() {
   return (
     <div class='cmp-not-found'>
