@@ -90,6 +90,10 @@ code {
   margin-right: 1rem;
   font-weight: 700;
 }
+.cmp-header__icon{
+  height: 2rem;
+  width: 2rem;
+}
 .cmp-home-hero {
   display: flex;
   flex-direction: column-reverse;
@@ -160,6 +164,7 @@ code {
 }
 .cmp-work-preview__card{
   padding: 2rem;
+  padding-bottom: 1rem;
   display: block;
   background-color: hsla(0,0%,100%,.05);
   border-radius: 1rem;
@@ -180,6 +185,10 @@ code {
   font-weight: 400;
   font-size: 1.25rem;
   margin: 0;
+}
+.cmp-work-preview__date{
+  display: inline-block;
+  margin-top: 1rem;
 }
 .cmp-content h1{
   font-size: 2.25rem;
