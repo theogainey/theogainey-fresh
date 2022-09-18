@@ -1,4 +1,10 @@
-export default function WorkPreview({ posts }) {
+import { Post } from '../types.d.ts';
+
+type WorkPreviewProps = {
+  posts: Post[];
+};
+
+export default function WorkPreview({ posts }: WorkPreviewProps) {
   return (
     <section>
       <h2 class='cmp-work-preview__section-heading'>Work</h2>

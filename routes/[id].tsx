@@ -1,8 +1,8 @@
 import { Handlers, PageProps } from '$fresh/server.ts';
 import { Head } from '$fresh/runtime.ts';
-import Layout from '../components/Layout.jsx';
+import Layout from '../components/Layout.tsx';
 import marked from '../marked.ts';
-import SEO from '../components/SEO.jsx';
+import SEO from '../components/SEO.tsx';
 
 interface Post {
   content: string;
@@ -31,7 +31,7 @@ export default function Post({ data }: PageProps<Post>) {
 
   const html = data.content ? marked.parse(data.content) : '';
   return (
-    <Layout home={false}>
+    <Layout>
       <SEO uri={''} title={data.title} home={false} />
       <Head>
         <title>{`${data.title} | Theo Gainey`}</title>

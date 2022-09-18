@@ -1,6 +1,11 @@
 import { Head } from '$fresh/runtime.ts';
 
-export default function SEO({ uri, title, home }) {
+type SEOProps = {
+  uri: string;
+  title: string;
+  home: boolean;
+};
+export default function SEO({ uri, title, home }: SEOProps) {
   return (
     <Head>
       <link

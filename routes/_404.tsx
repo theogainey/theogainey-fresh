@@ -1,10 +1,10 @@
 import { UnknownPageProps } from '$fresh/server.ts';
-import Layout from '../components/Layout.jsx';
-import NotFound from '../components/NotFound.jsx';
+import Layout from '../components/Layout.tsx';
+import NotFound from '../components/NotFound.tsx';
 
 export default function NotFoundPage({ url }: UnknownPageProps) {
   return (
-    <Layout home={false}>
+    <Layout>
       <NotFound />
     </Layout>
   );

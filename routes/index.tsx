@@ -1,17 +1,11 @@
 import { Handlers, PageProps } from '$fresh/server.ts';
 import { Head } from '$fresh/runtime.ts';
-import Layout from '../components/Layout.jsx';
-import HomeHero from '../components/HomeHero.jsx';
-import WorkPreview from '../components/WorkPreview.jsx';
-import SEO from '../components/SEO.jsx';
+import Layout from '../components/Layout.tsx';
+import HomeHero from '../components/HomeHero.tsx';
+import WorkPreview from '../components/WorkPreview.tsx';
+import SEO from '../components/SEO.tsx';
+import { Post } from '../types.d.ts';
 
-type Post = {
-  title: string;
-  uri: string;
-  preview: string;
-  date: string;
-  dateTime: string;
-};
 interface Posts {
   posts: Post[];
 }
@@ -39,7 +33,7 @@ export const handler: Handlers<Posts> = {
 
 export default function Home({ data }: PageProps<Posts>) {
   return (
-    <Layout home={true}>
+    <Layout home>
       <SEO home uri={''} title={'Theo Gainey - Full Stack Developer'} />
       <Head>
         <title>Theo Gainey - Full Stack Developer</title>

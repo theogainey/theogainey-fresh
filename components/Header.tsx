@@ -1,4 +1,8 @@
-export default function Header({ home }) {
+type HeaderProps = {
+  home?: boolean;
+};
+
+export default function Header({ home }: HeaderProps) {
   return (
     <header class='cmp-header'>
       {!home && (
