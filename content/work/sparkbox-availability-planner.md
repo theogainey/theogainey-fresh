@@ -1,19 +1,27 @@
 # Sparkbox Team Availability Planner
 
-For about 10 weeks I was a developer on a small team that built an internal company tool. The goal of this tool was to help the company's project managers make decisions when scheduling team members for future work. 
+This project is an internal tool for the Sparkbox team to use to plan and track team availability. For this project I worked with a small team of developers to build this tool over the course of 10 weeks. Together, with the help of our design team, we successfully built a tool that allows the company to make more informed planning decisions.
 
-## My Role 
+## The Problem
 
-In this project I was on a small team of developers who turned designs and application logic into code. The majority of the work I did for this project happened on the front end. Since this project used NextJS, a lot of my work consisted of building and styling React components. I also was responsible for making sure that the project met web accessibility standards. Additionally, I met often with the project's designer to refine the designs as the project progressed. 
+Before this project, the tool our project managers were using for planning did a good job of tracking team availability. But, it did not provide all the information needed to make informed decisions. Why was this? Although the tool did separate team members by role, it did not provide a way to see the skill sets of each individual team member. This meant that when planning a project, project managers would have to look elsewhere to find if an individual team member would be a good fit. This was a time consuming process that needed improvement.
+
+## The Solution
+
+The solution we came up with was to build a user friendly tool that coupled team member availability with details about their individual skills and interests. The tool allows the team to see who is available for a project, and what skills and interests they have. This allows the team to make more informed decisions about who to assign to a project.
 
 ## Technical Overview
 
+This project was built using the following technologies: React, Next.js, and SCSS. Additionally this project was deployed using [Netlify](https://www.netlify.com/). Although the deployed version of this tool is private, a demo version is available [here](https://fellowship-availability.netlify.app).
 
-This first technical choice for this app was to use NextJS as a framework. NextJS made the most sense for this project for a several reasons. One main reason is that many developers at this company have a high level of familiarity with NextJS. This means the number of developers who could perform maintenance on this project is high.
+## My Role
 
-The next technical choice was to use SCSS for styling. It was also decided to use [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) alongside [BEM class naming conventions](https://sparkbox.com/foundry/bem_by_example) to organize our styles.   
+On this project I was one of two developers who worked under the direction of a led developer to build this tool. During my time on this project I worked on both the front and back end. On the front end I worked to build the user interfaces, met with the project designer to refine and iterate designs, and ensured the project met accessibility standards. On the back end I worked to build the API that would allow the app to interact with team data. 
 
-## How To Check It Out 
-Unfortunately the final version of this project is not public. But a demo version with fake data is public. To view this demo [click here](https://fellowship-availability.netlify.app/). Additionally you can check out the code for the demo version by clicking the card below.
+## Challenges
 
-[![](https://opengraph.githubassets.com/a613bdc6a8113bfd57bf048d586d47d2ebee032d8923cc2969933a23dda6ca34/sparkbox/team-availability)](https://github.com/sparkbox/team-availability)
+One of the biggest challenges I faced on this project was that the designer only had a limited amount of time budgeted. Meaning that when design problems arose I needed to come up with possible design solutions on my own before meeting with the designer to finalize. This was a challenge for me because I do not have a design background. However, I was able to use the resources available to me to come up with possible solutions. In the process I learned a lot about design and how to better work with and communicate with designers.
+
+## Takeaways
+
+Before this project I had never worked closely with a designer. Additionally the other developer on this project often approached problems differently than I did. This ended up being a great learning experience for me. I learned a lot about how to work with designers and how to better communicate with other developers. In the end, I am very proud of how this project turned out. Visually the project looks great, it was well built, and I learned a lot along the way.
