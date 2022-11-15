@@ -88,3 +88,6 @@ jsonData
 jsonResponse
 PRs
 Analytics
+dateTime
+sparkbox
+uri

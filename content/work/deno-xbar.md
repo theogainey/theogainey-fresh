@@ -1,3 +1,13 @@
+---
+{
+  "title": "Deno xbar",
+  "preview": "How I made it easy to write xbar plugins in TypeScript",
+  "uri": "deno-xbar",
+  "date": "May 20, 2022",
+  "dateTime": "2022-05-20"
+}
+---
+
 # Deno Xbar
 
 If you have not heard of [xbar](https://xbarapp.com/) yet, it is a great tool for creating menu bar plugins for macOS. One of the great things about xbar is that even though it was written in Go, it is possible to write plugins in other languages. Until recently if you wanted to write a plugin in JavaScript or TypeScript you would have to use Node.js. However, because of the way xbar works, Node.js can be a bit difficult to use. Now that [Deno](https://deno.land/) is available as an alternative, you can now avoid many of the pain points that come with using Node.js.
@@ -31,7 +41,7 @@ Remember Deno is secure by default, so you will need to add the [permissions](ht
 #!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run --allow-net
 ```
 
-Once you have added the shebang and imported the framework you can start writing your plugin. First you need to write whatever code you need to get the data you want to display in your plugin. Next you can make use of the framework to create your plugin.The framework exports two functions, `xbar` and `separator`. The `xbar` function is used to create the menu bar plugin. The `separator` function is used to create a separator in the menu bar. The `xbar` function takes a single argument, which is an array of menu items. A menu item can be either a string or an object. If the menu item is a string, it will be displayed as a menu item in the menu bar. If the menu item is an object, you can add additional functionality to the menu item. 
+Once you have added the shebang and imported the framework you can start writing your plugin. First you need to write whatever code you need to get the data you want to display in your plugin. Next you can make use of the framework to create your plugin.The framework exports a function, `xbar` and a constant `separator`. The `xbar` function is used to create the menu bar plugin. The `separator` constant is used to create a separator in the menu bar. The `xbar` function takes a single argument, which is an array of menu items. A menu item can be either a string or an object. If the menu item is a string, it will be displayed as a menu item in the menu bar. If the menu item is an object, you can add additional functionality to the menu item. 
 
 The following is an example of a plugin that uses the framework:
 

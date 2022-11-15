@@ -1,3 +1,13 @@
+---
+{
+  "title": "Sparkbox Availability Planner",
+  "preview": "Check out my part in building an internal planning tool",
+  "uri": "sparkbox-availability-planner",
+  "date": "June 30, 2022",
+  "dateTime": "2022-06-30"
+}
+---
+
 # Sparkbox Team Availability Planner
 
 This project is an internal tool for the Sparkbox team to use to plan and track team availability. For this project I worked with a small team of developers to build this tool over the course of 10 weeks. Together, with the help of our design team, we successfully built a tool that allows the company to make more informed planning decisions.
