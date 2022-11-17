@@ -17,6 +17,7 @@ Table of Contents:
   --shadow-primary:hsla(0, 0%, 100%, 0.2);
   --shadow-accent: hsla(0, 0%, 100%, 0.15);
 }
+/* TODO use <pre data-language="ts"> and css variables to set syntax highlighting colors based on language */
 /*
 =====================================================================
 2. Elements 
@@ -60,7 +61,7 @@ button {
   color: inherit;
 }
 
-code {
+/* code {
   font-size: inherit;
 }
 pre code {
@@ -74,17 +75,7 @@ pre code {
   padding: 1rem;
   font-size: 1rem;
   border-radius: 0.5rem;
-}
-
-/* Code in text */
-p > code {
-  background: black;
-  word-wrap: break-word;
-  box-decoration-break: clone;
-  padding: .1rem .3rem .2rem;
-  border-radius: .2rem;
-}
-
+} */
 
 /*
 =====================================================================
@@ -250,6 +241,69 @@ p > code {
 .cmp-not-found p {
   font-weight: 400;
   font-size: 1.75rem;
+}
+
+.cmp-inline-code {
+  background: black;
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: .1rem .3rem .2rem;
+  border-radius: .2rem;
+  font-size: 1rem;
+  color: #aadafa;
+}
+
+.cmp-code {
+  display: block;
+  background: black;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  color: #aadafa;
+}
+
+.cmp-code__comment{
+  color: #74985d !important; 
+  /* color is !important to override other syntax highlighting */
+}
+
+.cmp-code__keyword {
+  color: #815f81;
+}
+
+.cmp-code__keyword--blue {
+  color: #679ad1;
+}
+
+.cmp-code__punctuation{
+  color: #d4d4d4;
+}
+
+.cmp-code__punctuation--yellow{
+  color: #f9d949;
+}
+
+.cmp-code__punctuation--blue{
+  color: #438bd7;
+}
+.cmp-code__punctuation--purple{
+  color: #cc76d1;
+}
+.cmp-code__function{
+  color: #dadaad;
+}
+
+.cmp-code__string{
+  color: #a57c68;
+}
+
+.cmp-code__number{
+  color: #bacdab;
 }
 /*
 =====================================================================

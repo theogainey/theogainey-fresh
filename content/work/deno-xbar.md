@@ -14,12 +14,12 @@ If you have not heard of [xbar](https://xbarapp.com/) yet, it is a great tool fo
 
 ## Problems With Node.js and xbar 
 
-The first problem with using Node.js with xbar is that xbar wants to treat all files it's plugin directory as plugins. If an app that uses Node.js requires the use of any dependency it will end up needing a `node_modules` directory. Although this is not an impossible issue to solve it can be difficult to work around. Additionally, if you are writing an app using TypeScript you will need to compile your code to JavaScript before running it. Again this is not an impossible issue to solve, but it requires additional steps to get your code running.
+The first problem with using Node.js with xbar is that xbar wants to treat all files it's plugin directory as plugins. If an app that uses Node.js requires the use of any dependency it will end up needing a {%codeInline%}{%codeCommentInline%}node_modules{%/codeCommentInline%}{%/codeInline%} directory. Although this is not an impossible issue to solve it can be difficult to work around. Additionally, if you are writing an app using TypeScript you will need to compile your code to JavaScript before running it. Again this is not an impossible issue to solve, but it requires additional steps to get your code running.
 
 
 ## Using Deno with xbar
 
-When using Deno instead of Node with xbar you can avoid the previously mentioned issues. The first reason for this is that Deno ships as a single executable. This means that often you will not need any external dependencies. If you do need to use any external dependencies instead of using a package manager like npm, in Deno you can use a URL to import the dependency. This means that you can avoid the need for a `node_modules` directory. Finally, Deno treats TypeScript as a first class language. This means that you can write your code in TypeScript and Deno will compile it for you. This eliminates the need for extra build steps to get your code running.
+When using Deno instead of Node with xbar you can avoid the previously mentioned issues. The first reason for this is that Deno ships as a single executable. This means that often you will not need any external dependencies. If you do need to use any external dependencies instead of using a package manager like npm, in Deno you can use a URL to import the dependency. This means that you can avoid the need for a {%codeInline%}{%codeCommentInline%}node_modules{%/codeCommentInline%}{%/codeInline%} directory. Finally, Deno treats TypeScript as a first class language. This means that you can write your code in TypeScript and Deno will compile it for you. This eliminates the need for extra build steps to get your code running.
 
 
 ## Taking It Further
@@ -31,52 +31,51 @@ To future simplify the process of writing xbar plugins in Deno, I created a simp
 This framework can be used with both JavaScript and TypeScript. To get started with this framework you need to do two things. First you need to add a shebang to the top line of your plugin. What the shebang does, is it tells xbar how to run the plugin.   Next you need to import the framework into your plugin. This can be done by adding the following line to the top of your plugin:
 
 ```ts
-#!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run
-import { xbar, separator } from "https://deno.land/x/xbar@LATEST_VERSION/mod.ts";
+{% codeWrapper %}{%codeComment%}#!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run {%/codeComment%}
+{%codeKeyword%}import{%/codeKeyword%}{%codePunctuationYellow%} {{%/codePunctuationYellow%} xbar{%codePunctuation%},{%/codePunctuation%} separator {%codePunctuationYellow%}}{%/codePunctuationYellow%} {%codeKeyword%}from{%/codeKeyword%} {%codeString%}"https://deno.land/x/xbar@LATEST_VERSION/mod.ts"{%/codeString%}{%codePunctuation%};{%/codePunctuation%}{% /codeWrapper %}
 ```
 
-Remember Deno is secure by default, so you will need to add the [permissions](https://deno.land/manual@v1.27.1/getting_started/permissions) you need to the shebang. For example, if you need to use the `--allow-net` flag you would add it to the shebang like this:
+Remember Deno is secure by default, so you will need to add the [permissions](https://deno.land/manual@v1.27.1/getting_started/permissions) you need to the shebang. For example, if you need to use the {%codeInline%}{%codeCommentInline%}--allow-net{%/codeCommentInline%}{%/codeInline%} flag you would add it to the shebang like this:
 
-```ts
-#!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run --allow-net
+```
+{%codeWrapper%}{%codeComment%}#!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run --allow-net{%/codeComment%}{%/codeWrapper%}
 ```
 
-Once you have added the shebang and imported the framework you can start writing your plugin. First you need to write whatever code you need to get the data you want to display in your plugin. Next you can make use of the framework to create your plugin.The framework exports a function, `xbar` and a constant `separator`. The `xbar` function is used to create the menu bar plugin. The `separator` constant is used to create a separator in the menu bar. The `xbar` function takes a single argument, which is an array of menu items. A menu item can be either a string or an object. If the menu item is a string, it will be displayed as a menu item in the menu bar. If the menu item is an object, you can add additional functionality to the menu item. 
+Once you have added the shebang and imported the framework you can start writing your plugin. First you need to write whatever code you need to get the data you want to display in your plugin. Next you can make use of the framework to create your plugin.The framework exports a function ({%codeInline%}xbar{%/codeInline%}) and a constant ({%codeInline%}separator{%/codeInline%}). The {%codeInline%}xbar{%/codeInline%} function is used to create the menu bar plugin. The {%codeInline%}separator{%/codeInline%} constant is used to create a separator in the menu bar. The {%codeInline%}xbar{%/codeInline%} function takes a single argument, which is an array of menu items. A menu item can be either a string or an object. If the menu item is a string, it will be displayed as a menu item in the menu bar. If the menu item is an object, you can add additional functionality to the menu item. 
 
 The following is an example of a plugin that uses the framework:
 
 ```ts
-#!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run --allow-net
-import { xbar, separator } from "https://deno.land/x/xbar@LATEST_VERSION/mod.ts";
+{% codeWrapper %}{%codeComment%}#!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run --allow-net{%/codeComment%}
+{%codeKeyword%}import{%/codeKeyword%}{%codePunctuationYellow%} {{%/codePunctuationYellow%} xbar{%codePunctuation%},{%/codePunctuation%} separator {%codePunctuationYellow%}}{%/codePunctuationYellow%} {%codeKeyword%}from{%/codeKeyword%} {%codeString%}"https://deno.land/x/xbar@LATEST_VERSION/mod.ts"{%/codeString%}{%codePunctuation%};{%/codePunctuation%}
+{%codeKeywordBlue%}const{%/codeKeywordBlue%} {%codePunctuationBlue%}jsonResponse{%/codePunctuationBlue%} {%codePunctuation%}={%/codePunctuation%} {%codeKeyword%}await{%/codeKeyword%} {%codeFunction%}fetch{%/codeFunction%}{%codePunctuationYellow%}({%/codePunctuationYellow%}
+  {%codeString%}'https://programming-quotes-api.herokuapp.com/quotes/random'{%/codeString%}{%codePunctuation%},{%/codePunctuation%}
+{%codePunctuationYellow%}){%/codePunctuationYellow%}{%codePunctuation%};{%/codePunctuation%}
+{%codeKeywordBlue%}const{%/codeKeywordBlue%} {%codePunctuationBlue%}jsonData{%/codePunctuationBlue%} {%codePunctuation%}={%/codePunctuation%} {%codeKeyword%}await{%/codeKeyword%} jsonResponse.{%codeFunction%}json{%/codeFunction%}{%codePunctuationYellow%}(){%/codePunctuationYellow%}{%codePunctuation%};{%/codePunctuation%}
 
-const jsonResponse = await fetch(
-  'https://programming-quotes-api.herokuapp.com/quotes/random',
-);
-const jsonData = await jsonResponse.json();
-
-xbar([
-  {
-    text: 'Programming Quotes',
-  },
-  separator,
-  {
-    text: jsonData.author,
-    submenu: [
-      {
-        text: jsonData.en,
-        size: 16,
-        color: 'navy',
-      },
-    ],
-  },
-]);
-
+{%codeFunction%}xbar{%/codeFunction%}{%codePunctuationYellow%}({%/codePunctuationYellow%}{%codePunctuationPurple%}[{%/codePunctuationPurple%}
+  {%codePunctuationBlue%}{{%/codePunctuationBlue%}
+    text{%codePunctuation%}:{%/codePunctuation%} {%codeString%}'Programming Quotes'{%/codeString%}{%codePunctuation%},{%/codePunctuation%}
+  {%codePunctuationBlue%}}{%/codePunctuationBlue%}{%codePunctuation%},{%/codePunctuation%}
+  separator{%codePunctuation%},{%/codePunctuation%}
+  {%codePunctuationBlue%}{{%/codePunctuationBlue%}
+    text{%codePunctuation%}:{%/codePunctuation%} jsonData{%codePunctuation%}.{%/codePunctuation%}author{%codePunctuation%};{%/codePunctuation%}
+    submenu{%codePunctuation%}:{%/codePunctuation%} {%codePunctuationYellow%}[{%/codePunctuationYellow%}
+      {%codePunctuationPurple%}{{%/codePunctuationPurple%}
+        text{%codePunctuation%}:{%/codePunctuation%} jsonData{%codePunctuation%}.{%/codePunctuation%}en{%codePunctuation%},{%/codePunctuation%}
+        size{%codePunctuation%}:{%/codePunctuation%} {%codeNumber%}16{%/codeNumber%}{%codePunctuation%},{%/codePunctuation%}
+        color{%codePunctuation%}:{%/codePunctuation%} {%codeString%}'navy'{%/codeString%}{%codePunctuation%},{%/codePunctuation%}
+      {%codePunctuationPurple%}}{%/codePunctuationPurple%}{%codePunctuation%},{%/codePunctuation%}
+    {%codePunctuationYellow%}]{%/codePunctuationYellow%}{%codePunctuation%},{%/codePunctuation%}
+  {%codePunctuationBlue%}}{%/codePunctuationBlue%}{%codePunctuation%},{%/codePunctuation%}
+{%codePunctuationPurple%}]{%/codePunctuationPurple%}{%codePunctuationYellow%}){%/codePunctuationYellow%}{%codePunctuation%};{%/codePunctuation%}
+{%/codeWrapper%}
 ```
 
-Finally, to add your plugin to xbar you need to add it to the xbar plugin directory. The default location for this directory is `~/Library/Application Support/xbar/plugins`. Once you have added your plugin to the directory, you need to make sure that the plugin is executable. You can do this by running the following command in the terminal:
+Finally, to add your plugin to xbar you need to add it to the xbar plugin directory. The default location for this directory is {%codeInline%}{%codeCommentInline%}~/Library/Application Support/xbar/plugins{%/codeCommentInline%}{%/codeInline%}. Once you have added your plugin to the directory, you need to make sure that the plugin is executable. You can do this by running the following command in the terminal:
 
-```bash
-chmod +x ~/Library/Application\ Support/xbar/plugins/your-plugin-name.1m.ts
+```
+{%codeWrapper%}{%codeComment%}chmod +x ~/Library/Application\ Support/xbar/plugins/your-plugin-name.1m.ts{%/codeComment%}{%/codeWrapper%}
 ```
 
 Now you can open xbar and it will automatically detect your plugin.
@@ -88,36 +87,37 @@ In addition to supporting the creation of declarative layouts, this framework al
 The following is an example of a plugin that uses the framework accessibility features:
 
 ```ts
-#!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run --allow-net --allow-env
-import {
-  isDarkMode,
-  separator,
-  xbar,
-} from 'https://deno.land/x/xbar@v2.0.0/mod.ts';
+{%codeWrapper%}{%codeComment%}#!/usr/bin/env -S -P/${HOME}/.deno/bin:/opt/homebrew/bin deno run --allow-net --allow-env{%/codeComment%}
+{%codeKeyword%}import{%/codeKeyword%} {%codePunctuationYellow%}{{%/codePunctuationYellow%}
+  isDarkMode{%codePunctuation%},{%/codePunctuation%}
+  separator{%codePunctuation%},{%/codePunctuation%}
+  xbar{%codePunctuation%},{%/codePunctuation%}
+{%codePunctuationYellow%}}{%/codePunctuationYellow%} {%codeKeyword%}from{%/codeKeyword%} {%codeString%}'https://deno.land/x/xbar@v2.0.0/mod.ts'{%/codeString%}{%codePunctuation%};{%/codePunctuation%}
 
-const jsonResponse = await fetch(
-  'https://programming-quotes-api.herokuapp.com/quotes/random',
-);
-const jsonData = await jsonResponse.json();
-const darkMode = await isDarkMode();
+{%codeKeywordBlue%}const{%/codeKeywordBlue%} {%codePunctuationBlue%}jsonResponse{%/codePunctuationBlue%} {%codePunctuation%}={%/codePunctuation%} {%codeKeyword%}await{%/codeKeyword%} {%codeFunction%}fetch{%/codeFunction%}{%codePunctuationYellow%}({%/codePunctuationYellow%}
+  {%codeString%}'https://programming-quotes-api.herokuapp.com/quotes/random'{%/codeString%}{%codePunctuation%},{%/codePunctuation%}
+{%codePunctuationYellow%}){%/codePunctuationYellow%}{%codePunctuation%};{%/codePunctuation%}
+{%codeKeywordBlue%}const{%/codeKeywordBlue%} {%codePunctuationBlue%}jsonData{%/codePunctuationBlue%}{%codePunctuation%} = {%/codePunctuation%}{%codeKeyword%}await{%/codeKeyword%} jsonResponse{%codePunctuation%}.{%/codePunctuation%}{%codeFunction%}json{%/codeFunction%}{%codePunctuationYellow%}(){%/codePunctuationYellow%}{%codePunctuation%};{%/codePunctuation%}
+{%codeKeywordBlue%}const{%/codeKeywordBlue%} {%codePunctuationBlue%}darkMode{%/codePunctuationBlue%} {%codePunctuation%}={%/codePunctuation%} {%codeKeyword%}await{%/codeKeyword%} {%codeFunction%}isDarkMode{%/codeFunction%}{%codePunctuationYellow%}(){%/codePunctuationYellow%}{%codePunctuation%};{%/codePunctuation%}
 
-xbar([
-  {
-    text: 'Programming Quotes',
-  },
-  separator,
-  {
-    text: jsonData.author,
-    submenu: [
-      {
-        text: jsonData.en,
-        wordWrap: 40,
-        size: 16,
-        color: darkMode ? '#818cf8' : 'navy',
-      },
-    ],
-  },
-]);
+{%codeFunction%}xbar{%/codeFunction%}{%codePunctuationYellow%}({%/codePunctuationYellow%}{%codePunctuationPurple%}[{%/codePunctuationPurple%}
+  {%codePunctuationBlue%}{{%/codePunctuationBlue%}
+    text{%codePunctuation%}:{%/codePunctuation%} {%codeString%}'Programming Quotes'{%/codeString%}{%codePunctuation%},{%/codePunctuation%}
+  {%codePunctuationBlue%}}{%/codePunctuationBlue%}{%codePunctuation%},{%/codePunctuation%}
+  separator{%codePunctuation%},{%/codePunctuation%}
+  {%codePunctuationBlue%}{{%/codePunctuationBlue%}
+    text{%codePunctuation%}:{%/codePunctuation%} jsonData{%codePunctuation%}.{%/codePunctuation%}author{%codePunctuation%},{%/codePunctuation%}
+    submenu{%codePunctuation%}:{%/codePunctuation%} {%codePunctuationYellow%}[{%/codePunctuationYellow%}
+      {%codePunctuationPurple%}{{%/codePunctuationPurple%}
+        text{%codePunctuation%}:{%/codePunctuation%} jsonData{%codePunctuation%}.{%/codePunctuation%}en{%codePunctuation%},{%/codePunctuation%}
+        wordWrap{%codePunctuation%}:{%/codePunctuation%} {%codeNumber%}40{%/codeNumber%}{%codePunctuation%},{%/codePunctuation%}
+        size{%codePunctuation%}:{%/codePunctuation%} {%codeNumber%}16{%/codeNumber%}{%codePunctuation%},{%/codePunctuation%}
+        color{%codePunctuation%}:{%/codePunctuation%} darkMode {%codePunctuation%}?{%/codePunctuation%} {%codeString%}'#818cf8'{%/codeString%} {%codePunctuation%}:{%/codePunctuation%} {%codeString%}'navy'{%/codeString%}{%codePunctuation%},{%/codePunctuation%}
+      {%codePunctuationPurple%}}{%/codePunctuationPurple%}{%codePunctuation%},{%/codePunctuation%}
+    {%codePunctuationYellow%}]{%/codePunctuationYellow%}{%codePunctuation%},{%/codePunctuation%}
+  {%codePunctuationBlue%}}{%/codePunctuationBlue%}{%codePunctuation%},{%/codePunctuation%}
+{%codePunctuationPurple%}]{%/codePunctuationPurple%}{%codePunctuationYellow%}){%/codePunctuationYellow%}{%codePunctuation%};{%/codePunctuation%}
+{%/codeWrapper%}
 ```
 
 ## Takeaways

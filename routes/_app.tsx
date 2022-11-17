@@ -31,7 +31,7 @@ export default function App(props: AppProps) {
           sizes='16x16'
           type='image/png'
         />
-        <script
+        {/* <script
           async
           src='https://www.googletagmanager.com/gtag/js?id=G-VERG9WQXHD'
         >
@@ -43,7 +43,7 @@ export default function App(props: AppProps) {
             gtag('js', new Date());
             gtag('config', 'G-VERG9WQXHD');`,
           }}
-        />
+        /> */}
       </Head>
       <props.Component />
     </>
