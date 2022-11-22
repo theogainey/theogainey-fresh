@@ -1,14 +1,3 @@
-const imgWrapper = {
-  render: 'div',
-  description: 'wrap a image in a div',
-  attributes: {
-    class: {
-      type: String,
-      default: 'cmp-img-container',
-    },
-  },
-};
-
 const imgLink = {
   render: 'a',
   description: 'wrap a image in a link',
@@ -22,6 +11,7 @@ const imgLink = {
 const imgRoot = {
   render: 'img',
   description: 'img root',
+  selfClosing: true,
   attributes: {
     src: {
       type: String,
@@ -30,6 +20,10 @@ const imgRoot = {
     alt: {
       type: String,
       default: '',
+    },
+    class: {
+      type: String,
+      default: 'cmp-image',
     },
   },
 };
@@ -193,7 +187,6 @@ const codePunctuationPurple = {
 
 // TODO: write transform function to transform code block to custom tags and maybe render them depends on how markdoc works
 export const tags = {
-  imgWrapper: imgWrapper,
   imgRoot: imgRoot,
   imgLink: imgLink,
   codeInline: codeInline,

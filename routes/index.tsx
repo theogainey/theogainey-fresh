@@ -1,6 +1,7 @@
 import { Handlers, PageProps } from '$fresh/server.ts';
 import { Head } from '$fresh/runtime.ts';
 import Markdoc from 'markdoc';
+import postSorter from '../utils/postSorter.ts';
 import Layout from '../components/Layout.tsx';
 import HomeHero from '../components/HomeHero.tsx';
 import WorkPreview from '../components/WorkPreview.tsx';
@@ -33,7 +34,7 @@ export default function Home({ data }: PageProps<Posts>) {
         <title>Theo Gainey - Full Stack Developer</title>
       </Head>
       <HomeHero />
-      {data.posts && <WorkPreview posts={data.posts} />}
+      {data.posts && <WorkPreview posts={data.posts.sort(postSorter)} />}
     </Layout>
   );
 }
