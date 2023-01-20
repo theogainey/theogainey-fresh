@@ -15,13 +15,6 @@ export default function Footer() {
       >
         CodePen
       </a>
-      <a
-        href='https://twitter.com/GaineyTheo'
-        target='blank'
-        class='cmp-footer__link hover-highlight'
-      >
-        Twitter
-      </a>
     </footer>
   );
 }
