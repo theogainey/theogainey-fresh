@@ -6,8 +6,6 @@ type WorkPreviewProps = {
 
 export default function WorkPreview({ posts }: WorkPreviewProps) {
   return (
-    <section>
-      <h2 class='cmp-work-preview__section-heading'>Work</h2>
       <ul class='cmp-work-preview'>
         {posts.map((post) => (
           <li>
@@ -21,6 +19,5 @@ export default function WorkPreview({ posts }: WorkPreviewProps) {
           </li>
         ))}
       </ul>
-    </section>
   );
 }
