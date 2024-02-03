@@ -4,13 +4,13 @@ export default function HomeHero() {
       <div class='cmp-home-hero__about'>
         <h1 class='cmp-home-hero__name'>Theo Gainey</h1>
         <h2 class='cmp-home-hero__job'>
-          Full Stack Developer at{' '}
+          Developer at{' '}
           <a
-            href='https://sparkbox.com/'
+            href='https://realart.com/'
             target='blank'
             class='cmp-home-hero__company hover-highlight'
           >
-            Sparkbox
+            Real Art
           </a>
         </h2>
         <p class='cmp-home-hero__detail'>
